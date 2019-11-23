@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calculator</title>
+<style>
+
+label {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+}
+
+input, select {
+    margin: 2px;
+    width: 150px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+h2 {
+    width: 50%;
+    margin: 2px;
+    text-align: center;
+    margin: 20px auto 20px auto;
+}
+
+div.container {
+    background-color: lightgreen;
+    width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <form th:action="@{/calculate}" method="post" >
+            <label for="ope1">Operand 1:</label>
+            <input type="text" name="ope1"><br>
+            <label for="ope2">Operand 2:</label>
+            <input type="text" name="ope2"><br>
+            <label for="operation">Operation:</label>
+            <select name="operation">
+                <option value="+">Addition</option>
+                <option value="-">Subtraction</option>
+                <option value="*">Multiplication</option>
+                <option value="/">Division</option>
+            </select><br>
+            <input type="submit" value="Calculate" style="width: 100px;">
+        </form>
+    </div>
+    <h2 th:if="${!#strings.isEmpty(result)}" th:text="${result}"></h2>
+</body>
+</html>

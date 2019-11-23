@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Greeting</title>
+<style>
+
+label {
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+
+input {
+    margin: 2px;
+}
+
+h2 {
+    width: 50%;
+    margin: 2px;
+    text-align: center;
+    margin: 20px auto 20px auto;
+}
+
+h3 {
+    width: 50%;
+    margin: 2px;
+    text-align: right;
+    margin: 0 auto;
+}
+
+div.container {
+    background-color: yellow;
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <h3 th:text="${currentTime}"></h3>
+    <div class="container">
+        <form th:action="@{/greeting}" method="post" >
+            <label for="first">First Name:</label>
+            <input type="text" name="first"><br>
+            <label for="last">Last Name:</label>
+            <input type="text" name="last"><br>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+    <div th:if="${!#strings.isEmpty(name)}">
+         <h2 th:text="'Hello, ' + ${name} + '!'"></h2>
+    </div>
+</body>
+</html>
