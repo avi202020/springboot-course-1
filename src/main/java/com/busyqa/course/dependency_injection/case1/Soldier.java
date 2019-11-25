@@ -8,4 +8,10 @@ public class Soldier {
         km.executeKoreaMision();
     }
     
+    VietnamMission vm = new VietnamMission();
+    
+    public void goToVietnamMision(){
+    	km.executeKoreaMision();
+    }
+    
 }

@@ -14,10 +14,10 @@ public class MilitaryCampaign {
         soldier.goToMission();
 
 
-//        IMission vm = new VietnamMission();
+        IMission vm = new VietnamMission();
 
-//        soldier.setMission(vm);
-//        soldier.goToMission();
+        soldier.setMission(vm);
+        soldier.goToMission();
 
 
     }

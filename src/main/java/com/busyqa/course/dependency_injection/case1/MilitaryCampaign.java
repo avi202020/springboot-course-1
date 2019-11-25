@@ -8,7 +8,7 @@ public class MilitaryCampaign {
 
         s.goToKoreaMision();
 
-        //s.goToVietnamMision();
+        s.goToVietnamMision();
 
     }
 
